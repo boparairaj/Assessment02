@@ -3,7 +3,7 @@
  * Write a description of class StudentMarks here.
  *
  * @author (Rajwant Kaur)
- * @version (24-09-23 version number or a date)
+ * @version (24-09-23)
  */
 
 import java.io.*;
