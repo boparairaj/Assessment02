@@ -44,7 +44,32 @@ public class StudentMarks
             }
         }
         br.close();
+        
+        while (true) {
+            // F5: Menu System
+            System.out.println("Select an option:");
+            System.out.println("1. Print students total marks:");
+            System.out.println("2. Print students below a certain threshold");
+            System.out.println("3. Print top 5 students");
+            System.out.println("4. Exit");
+            
+            int choice = scanner.nextInt();
+            if (choice == 1) {
+        }
+        else if (choice ==2){
+            
+        }
+        else if (choice ==3){
+            
+        }
+        else if (choice ==4){
+            System.exit(0);
+        }
+        else{
+             System.out.println("Invalid choice. Please try again.");
+        }
     }
+}
         
         
 }
