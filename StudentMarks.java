@@ -55,6 +55,10 @@ public class StudentMarks
             
             int choice = scanner.nextInt();
             if (choice == 1) {
+                // F2: Calculate and Print the total mark for each student.
+                for (Student student : students) {
+                    System.out.println("Name: " + student.name + ", ID: " + student.id + ", Total Marks: " + student.totalMark);
+                }
         }
         else if (choice ==2){
             
