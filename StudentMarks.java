@@ -61,7 +61,14 @@ public class StudentMarks
                 }
         }
         else if (choice ==2){
-            
+            // F3: Print the list of students with total marks less than a certain threshold.
+                System.out.print("Enter the threshold: ");
+                int threshold = scanner.nextInt();
+                for (Student student : students) {
+                    if (student.totalMark < threshold) {
+                        System.out.println(student.name + " " + student.id + " " + student.totalMark);
+                    }
+                }
         }
         else if (choice ==3){
             
