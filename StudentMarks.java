@@ -71,20 +71,25 @@ public class StudentMarks
                 }
         }
         else if (choice ==3){
-            // F4: Print the top 5 students based on total marks 
-            List<Student> highestStudents = new ArrayList<>();
-            
-            
+              // F4: Print the top 5 students based on total marks 
+            Student[] topStudents = new Student[5];
             for (Student student : students) {
-                if (highestStudents.size() < 5) {
-                    highestStudents.add(student);
-                } 
-                else {
-                    Student minHighestStudent = Collections.min(highestStudents, Comparator.comparingInt(s -> s.totalMark));
-                    if (student.totalMark > minHighestStudent.totalMark) {
-                        highestStudents.remove(minHighestStudent);
-                        highestStudents.add(student);
+                for (int i = 0; i < topStudents.length; i++) {
+                    if (topStudents[i] == null || student.totalMark > topStudents[i].totalMark) {
+                        // Shift the other students down
+                        for (int j = topStudents.length - 1; j > i; j--) {
+                            topStudents[j] = topStudents[j - 1];
+                        }
+                        // Insert the current student at the ith position
+                        topStudents[i] = student;
+                        break;
                     }
+                }
+            }
+            // Print the top students
+            for (Student topStudent : topStudents) {
+                if (topStudent != null) {
+                    System.out.println(topStudent.name + " " + topStudent.id + " " + topStudent.totalMark);
                 }
             }
         }
