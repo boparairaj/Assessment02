@@ -25,26 +25,37 @@ public class StudentMarks
                 this.totalMark = marks[0] + marks[1] + marks[2]; // Calculating total mark for each student (F2)
             }
         }
-
+    
         List<Student> students = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-
-        // F1: Read the unit name and students' marks from a given text file.
-        System.out.print("Enter the filename: ");
-        String fileName = scanner.nextLine();
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        String line;
-        while ((line = br.readLine()) != null) {
-            if (!line.startsWith("#")) { // Ignoring lines that are comments
-                String[] parts = line.split(" ");
-                String name = parts[0];
-                String id = parts[1];
-                int[] marks = new int[]{Integer.parseInt(parts[2]), Integer.parseInt(parts[3]), Integer.parseInt(parts[4])};
-                students.add(new Student(name, id, marks));
+          Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter the Student marks filename");
+            
+          
+            try {
+                // F1: Read the unit name and students' marks from a given text file.
+                
+                String fileName = scanner.nextLine();
+                BufferedReader br = new BufferedReader(new FileReader(fileName));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    if (!line.startsWith("#")) { // Ignoring lines that are comments
+                        String[] parts = line.split(" ");
+                        String name = parts[0];
+                        String id = parts[1];
+                        int[] marks = new int[]{Integer.parseInt(parts[2]), Integer.parseInt(parts[3]), Integer.parseInt(parts[4])};
+                        students.add(new Student(name, id, marks));
+                    }
+                } 
+                System.out.println("File read successfully");
+                br.close();
+                break;
+            } catch (IOException e) {
+                
+                System.out.println("Please enter existing filename");
             }
-        }
-        br.close();
         
+        }
         while (true) {
             // F5: Menu System
             System.out.println("Select an option:");
