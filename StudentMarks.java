@@ -71,7 +71,22 @@ public class StudentMarks
                 }
         }
         else if (choice ==3){
+            // F4: Print the top 5 students based on total marks 
+            List<Student> highestStudents = new ArrayList<>();
             
+            
+            for (Student student : students) {
+                if (highestStudents.size() < 5) {
+                    highestStudents.add(student);
+                } 
+                else {
+                    Student minHighestStudent = Collections.min(highestStudents, Comparator.comparingInt(s -> s.totalMark));
+                    if (student.totalMark > minHighestStudent.totalMark) {
+                        highestStudents.remove(minHighestStudent);
+                        highestStudents.add(student);
+                    }
+                }
+            }
         }
         else if (choice ==4){
             System.exit(0);
