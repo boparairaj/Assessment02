@@ -82,27 +82,41 @@ public class StudentMarks
                 }
         }
         else if (choice ==3){
-              // F4: Print the top 5 students based on total marks 
-            Student[] topStudents = new Student[5];
-            for (Student student : students) {
-                for (int i = 0; i < topStudents.length; i++) {
-                    if (topStudents[i] == null || student.totalMark > topStudents[i].totalMark) {
-                        // Shift the other students down
-                        for (int j = topStudents.length - 1; j > i; j--) {
-                            topStudents[j] = topStudents[j - 1];
-                        }
-                        // Insert the current student at the ith position
-                        topStudents[i] = student;
-                        break;
-                    }
+            // F4: prints the top 5 students with the highest total marks and the top 5 students with the lowest total marks.
+            List<Student> highestStudents = new ArrayList<>();
+            List<Student> lowestStudents = new ArrayList<>();
+            
+            for (int i = 0; i < students.size(); i++) {
+                Student student = students.get(i);
+                if (i < 5) {
+                    highestStudents.add(student);
+                    lowestStudents.add(student);
+                    continue;
+                }
+                Student minHighestStudent = Collections.min(highestStudents, Comparator.comparingInt(s -> s.totalMark));
+                if (student.totalMark > minHighestStudent.totalMark) {
+                    highestStudents.remove(minHighestStudent);
+                    highestStudents.add(student);
+                }
+            
+                Student maxLowestStudent = Collections.max(lowestStudents, Comparator.comparingInt(s -> s.totalMark));
+                if (student.totalMark < maxLowestStudent.totalMark) {
+                    lowestStudents.remove(maxLowestStudent);
+                    lowestStudents.add(student);
                 }
             }
-            // Print the top students
-            for (Student topStudent : topStudents) {
-                if (topStudent != null) {
-                    System.out.println(topStudent.name + " " + topStudent.id + " " + topStudent.totalMark);
-                }
+            
+            // Printing the top 5 highest and lowest students
+            System.out.println("Top 5 students with the highest total marks:");
+            for (Student s : highestStudents) {
+                System.out.println(s.name + " " + s.id + " " + s.totalMark);
             }
+            
+            System.out.println("Top 5 students with the lowest total marks:");
+            for (Student s : lowestStudents) {
+                System.out.println(s.name + " " + s.id + " " + s.totalMark);
+            }
+           
         }
         else if (choice ==4){
             System.exit(0);
