@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
+A project to compute and display student assessment statistics, containing
+total marks, students below a certain mark threshold, and the top highest and 
+lowest marks of 5 students, based on data read from a specified text file.
 ------------------------------------------------------------------------
 
 PROJECT TITLE: 			Fundamental Programming	
