@@ -29,7 +29,7 @@ public class StudentMarks
         List<Student> students = new ArrayList<>();
           Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Enter the Student marks filename");
+            System.out.println("Enter the Student marks filename with file extension");
             
           
             try {
@@ -52,12 +52,16 @@ public class StudentMarks
                 break;
             } catch (IOException e) {
                 
-                System.out.println("Please enter existing filename");
+                System.out.println("Invalid Filename. Please enter again");
             }
         
         }
         while (true) {
             // F5: Menu System
+            System.out.println();
+            System.out.println("******************************************");
+            System.out.println("Welcome to Student Marks Calculation Program");
+             System.out.println("******************************************");
             System.out.println("Select an option:");
             System.out.println("1. Print students total marks:");
             System.out.println("2. Print students below a certain threshold");
@@ -93,12 +97,15 @@ public class StudentMarks
                     lowestStudents.add(student);
                     continue;
                 }
+                
+                //Compute top 5 students with highest marks
                 Student minHighestStudent = Collections.min(highestStudents, Comparator.comparingInt(s -> s.totalMark));
                 if (student.totalMark > minHighestStudent.totalMark) {
                     highestStudents.remove(minHighestStudent);
                     highestStudents.add(student);
                 }
             
+                //Compute top 5 students with lowest marks
                 Student maxLowestStudent = Collections.max(lowestStudents, Comparator.comparingInt(s -> s.totalMark));
                 if (student.totalMark < maxLowestStudent.totalMark) {
                     lowestStudents.remove(maxLowestStudent);
@@ -112,13 +119,17 @@ public class StudentMarks
                 System.out.println(s.name + " " + s.id + " " + s.totalMark);
             }
             
+            System.out.println();
             System.out.println("Top 5 students with the lowest total marks:");
             for (Student s : lowestStudents) {
                 System.out.println(s.name + " " + s.id + " " + s.totalMark);
             }
            
+            System.out.println();
+            System.out.println();
         }
         else if (choice ==4){
+            System.out.println("Student Marks Statistics Program Exiting");
             System.exit(0);
         }
         else{
