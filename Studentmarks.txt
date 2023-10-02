@@ -1,40 +1,21 @@
-# First Student
-John 12345 11 22 11 # Needs Improvement
-# Second Student
-Doe 67890 23 24 27 # Consistent Grades
-# Third Student
-Alice 62390 19 11 15 # Improved in Final Assignment
-# Fourth Student
-Smith 67890 18 22 29 # Consistent Performance
-# Fifth Student
-Eve 11222 30 32 33 # Good Overall Marks
-# Sixth Student
-Bob 33444 14 15 19 # Room for Improvement
-# Seventh Student
-Charlie 55666 25 27 23 # Good Marks in Last Two Assignments
-# Eighth Student
-David 77888 30 35 40 # Excellent Performance
-# Ninth Student
-Megan 99000 20 22 25 # Improvement Needed
-# Tenth Student
-Sophia 22333 27 28 29 # Strong Performance
-# Eleventh Student
-Lucas 44777 29 35 38 # Steady Progress
-# Twelfth Student
-Emma 55999 40 45 50 # Top Performer
-# Thirteenth Student
-Liam 66111 33 36 39 # Good Performance
-# Fourteenth Student
-Olivia 77222 38 40 44 # Outstanding Marks
-# Fifteenth Student
-Aiden 88333 30 34 38 # Consistently Good
-# Sixteenth Student
-Isabella 99444 24 28 35 # Improvement Noticed
-# Seventeenth Student
-Ethan 100555 40 42 45 # Excellent Marks
-# Eighteenth Student
-Ava 111666 20 25 27 # Needs More Focus
-# Nineteenth Student
-Noah 122777 35 39 42 # Steady Improvement
-# Twentieth Student
-Mia 133888 30 35 40 # Good Overall Performance
+Last Name,First Name,Student ID,A1,A2,A3
+Doe,John,12345,11,22,11
+Smith,Jane,67890,23,24,27
+Johnson,Alice,62390,19,11,15
+Brown,Smith,67890,18,22,29
+Taylor,Eve,11222,30,32,33
+Miller,Bob,33444,14,15,19
+Wilson,Charlie,55666,25,27,23
+Moore,David,77888,30,35,40
+Anderson,Megan,99000,20,22,25
+Thomas,Sophia,22333,27,28,29
+Jackson,Lucas,44777,29,35,38
+White,Emma,55999,40,45,50
+Harris,Liam,66111,33,36,39
+Martin,Olivia,77222,38,40,44
+Thompson,Aiden,88333,30,34,38
+Garcia,Isabella,99444,24,28,35
+Martinez,Ethan,100555,40,42,45
+Robinson,Ava,111666,20,25,27
+Clark,Noah,122777,35,39,42
+Rodriguez,Mia,133888,30,35,40
